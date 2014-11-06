@@ -3,16 +3,17 @@ def inp_to_float(X):
     res = float(X)
     return res
 
-whileile True:
+def computepay(h, r):
+    p = 40 * Rate + (r * 1.5 * (h - 40))
+    return p
+
+inp = raw_input("Enter hours: ")
+try:
+    Hours = float(inp)
+except:
+    print "ERROR: value must be numeric, try again"
     inp = raw_input("Enter hours: ")
-    try:
-        Hours = float(inp)
-        continue
-    except:
-        print "ERROR: value must be numeric, try again"
-        inp = raw_input("Enter hours: ")
-        Hours = float(inp)
-        #if type(Hours) == float: continue
+    Hours = float(inp)
 
 inp = raw_input("Enter rate: ")
 try:
@@ -23,4 +24,4 @@ except:
     Rate = float(inp)
 
 
-print "Pay must be: ", 40 * Rate + (Rate * 1.5 * (Hours - 40))
+print "Pay must be: ", computepay(Hours, Rate)
